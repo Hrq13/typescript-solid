@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "test:silent": "npx jest --watchAll --silent --noStackTrace"
+    "test:silent": "npx jest --watchAll --silent --noStackTrace",
+    "test:coverage": "npx jest --coverage --silent --noStackTrace"
   },
   "keywords": [],
   "author": "",
