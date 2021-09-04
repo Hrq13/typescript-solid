@@ -12,10 +12,7 @@ const createShoppingCart = (discount: Discount): ShoppingCart => {
 
 const createCartItem = (name: string, price: number): CartItem => {
   class NewCartItem implements CartItem {
-    constructor(public name: string, public price: number) {
-      this.name = name;
-      this.price = price;
-    }
+    constructor(public name: string, public price: number) {}
   }
 
   return new NewCartItem(name, price);
