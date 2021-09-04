@@ -1,14 +1,16 @@
 import { Product } from './product';
 
-describe('Messaging', () => {
+const createSut = (name: string, price: number) => {
+  return new Product(name, price);
+};
+
+describe('Product', () => {
   afterEach(() => jest.clearAllMocks());
 
-  const createSut = (name: string, price: number) => new Product(name, price);
-
-  it('should return undefined', () => {
+  it('should have properties name and price', () => {
     const sut = createSut('TV', 1200);
 
-    expect(sut.name).toBe('TV');
-    expect(sut.price).toBe(1200);
+    expect(sut).toHaveProperty('name', 'TV');
+    expect(sut).toHaveProperty('price', 1200);
   });
 });

@@ -1,9 +1,9 @@
 import { Messaging } from './messaging';
 
+const createSut = () => new Messaging();
+
 describe('Messaging', () => {
   afterEach(() => jest.clearAllMocks());
-
-  const createSut = () => new Messaging();
 
   it('should return undefined', () => {
     const sut = createSut();

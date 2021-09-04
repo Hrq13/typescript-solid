@@ -1,16 +1,18 @@
 import { Persistency } from './persistency';
 
+const createSut = () => new Persistency();
+
 describe('Testing persistency class', () => {
   afterEach(() => jest.clearAllMocks());
 
   it('should return undefined', () => {
-    const sut = new Persistency();
+    const sut = createSut();
 
     expect(sut.saveOrder()).toBeUndefined();
   });
 
   it('should call console.log once', () => {
-    const sut = new Persistency();
+    const sut = createSut();
     const consoleSpy = jest.spyOn(console, 'log');
     sut.saveOrder();
     expect(consoleSpy).toBeCalledTimes(1);
@@ -18,7 +20,7 @@ describe('Testing persistency class', () => {
   });
 
   it('should call console.log with "Order has been saved successfully"', () => {
-    const sut = new Persistency();
+    const sut = createSut();
     const consoleSpy = jest.spyOn(console, 'log');
     sut.saveOrder();
     expect(consoleSpy).toHaveBeenCalledWith(
